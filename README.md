@@ -1,4 +1,6 @@
-<p align="left"> <img width="675" src="https://raw.githubusercontent.com/willmcpo/body-scroll-lock/master/images/logo.png" alt="Body scroll lock...just works with everything ;-)" /> </p>
+# Body scroll lock
+
+      This fork is maintained by Cosnova
 
 ## Why BSL?
 
@@ -24,9 +26,9 @@ _Aren't the alternative approaches sufficient?_
 - the `position: fixed` approach causes the body scroll to reset
 - some approaches break inertia/momentum/rubber-band scrolling on iOS
 
-_LIGHT Package Size:_
+<!-- _LIGHT Package Size:_
 
-[![minzip size](https://badgen.net/bundlephobia/minzip/body-scroll-lock?color=orange)](https://badgen.net/bundlephobia/minzip/body-scroll-lock?color=orange)
+[![minzip size](https://badgen.net/bundlephobia/minzip/body-scroll-lock?color=orange)](https://badgen.net/bundlephobia/minzip/body-scroll-lock?color=orange) -->
 
 ## Install
 
@@ -243,12 +245,12 @@ bodyScrollLock.enableBodyScroll(targetElement);
 bodyScrollLock.clearAllBodyScrollLocks();
 ```
 
-## Demo
+<!-- ## Demo
 
 Check out the demo, powered by Vercel.
 
 * https://bodyscrolllock.vercel.app for a basic example 
-* https://bodyscrolllock-modal.vercel.app for an example with a modal.
+* https://bodyscrolllock-modal.vercel.app for an example with a modal. -->
 
 ## Functions
 
@@ -333,4 +335,4 @@ https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-beh
 
 ## Changelog
 
-Refer to the [releases](https://github.com/willmcpo/body-scroll-lock/releases) page.
+Refer to the [releases](https://github.com/cosnova/body-scroll-lock/releases) page.

@@ -1,11 +1,17 @@
 {
-  "name": "body-scroll-lock",
+  "name": "@cosnova/body-scroll-lock",
   "version": "3.1.5",
   "description": "Enables body scroll locking (for iOS Mobile and Tablet, Android, desktop Safari/Chrome/Firefox) without breaking scrolling of a target element (eg. modal/lightbox/flyouts/nav-menus)",
   "main": "lib/bodyScrollLock.min.js",
   "module": "lib/bodyScrollLock.esm.js",
-  "author": "Will Po",
-  "repository": "https://github.com/willmcpo/body-scroll-lock.git",
+  "author": {
+    "name": "Will Po",
+    "url": "https://github.com/willmcpo/body-scroll-lock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosnova/body-scroll-lock.git"
+  },
   "license": "MIT",
   "files": [
     "lib"
