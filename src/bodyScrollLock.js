@@ -75,7 +75,7 @@ const setOverflowHidden = (options?: BodyScrollOptions) => {
     const scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
 
     if (reserveScrollBarGap && scrollBarGap > 0) {
-      const computedBodyPaddingRight = parseInt(getComputedStyle(document.body).getPropertyValue('padding-right'), 10);
+      const computedBodyPaddingRight = parseInt(window.getComputedStyle(document.body).getPropertyValue('padding-right'), 10);
       previousBodyPaddingRight = document.body.style.paddingRight;
       document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarGap}px`;
     }
@@ -152,6 +152,8 @@ export const disableBodyScroll = (targetElement: any, options?: BodyScrollOption
   };
 
   locks = [...locks, lock];
+  
+  setOverflowHidden(options);
 
   if (isIosDevice) {
     targetElement.ontouchstart = (event: HandleScrollEvent) => {
@@ -171,12 +173,12 @@ export const disableBodyScroll = (targetElement: any, options?: BodyScrollOption
       document.addEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
       documentListenerAdded = true;
     }
-  } else {
-    setOverflowHidden(options);
   }
 };
 
 export const clearAllBodyScrollLocks = (): void => {
+  restoreOverflowSetting();
+
   if (isIosDevice) {
     // Clear all locks ontouchstart/ontouchmove handlers, and the references.
     locks.forEach((lock: Lock) => {
@@ -191,8 +193,6 @@ export const clearAllBodyScrollLocks = (): void => {
 
     // Reset initial clientY.
     initialClientY = -1;
-  } else {
-    restoreOverflowSetting();
   }
 
   locks = [];
@@ -209,6 +209,10 @@ export const enableBodyScroll = (targetElement: any): void => {
 
   locks = locks.filter(lock => lock.targetElement !== targetElement);
 
+  if (!locks.length) {
+    restoreOverflowSetting();
+  }
+
   if (isIosDevice) {
     targetElement.ontouchstart = null;
     targetElement.ontouchmove = null;
@@ -217,7 +221,5 @@ export const enableBodyScroll = (targetElement: any): void => {
       document.removeEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
       documentListenerAdded = false;
     }
-  } else if (!locks.length) {
-    restoreOverflowSetting();
   }
 };
