@@ -3,7 +3,7 @@
   "version": "3.1.6",
   "description": "Enables body scroll locking (for iOS Mobile and Tablet, Android, desktop Safari/Chrome/Firefox) without breaking scrolling of a target element (eg. modal/lightbox/flyouts/nav-menus) (Cosnova fork)",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/body-scroll-lock.esm.js",
   "typings": "dist/index.d.ts",
   "author": {
     "name": "Will Po",
